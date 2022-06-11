@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shortly URL shortening API Challenge</title>
+
+		<!--    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">-->
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="css/all.min.css" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body id="main-wrapper">
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container">
+				
+
+				<a class="navbar-brand font-weight-bold" href="#">
+					<img src="images/logo.svg">
+				</a>
+
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button><div class="navbar-collapse collapse text-center" id="navbarTogglerDemo03" style="">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a class="nav-link" href="#">
+								Features
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Pricing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Resources</a>
+						</li>
+					</ul>
+					<hr>
+					<form class="form-inline my-2 my-lg-0">
+						<div class="d-flex">
+							
+							<button class="banner-section-btn btn banner-section-btn mt-3" type="submit">
+								Sign Up
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+
+		<section class="banner mb-5">
+			<div class="container">
+				<div class="banner-section">
+					<div
+						class="d-flex align-items-start justify-content-center flex-column"
+					>
+						<h2 class="banner-section-title">More than just</h2>
+
+						<h2 class="banner-section-title">shorter links</h2>
+						<p class="m-0 text-center">
+							Build your brand’s recognition and get detailed
+						</p>
+						<p class="m-0">
+							insights on how your links are performing.
+						</p>
+						<button
+							class="banner-section-btn btn banner-section-btn mt-3"
+							type="submit"
+						>
+							Get Started
+						</button>
+					</div>
+					<div class="banner-img">
+						<img src="images/illustration-working.svg" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="bg-light py-5">
+			<div class="container position-relative mb-64">
+				<div class="">
+					<div
+						class="board-container link-form link-urls position-absolute"
+					>
+						<div class="display-grid w-100">
+							<input
+							    class="form-control"
+								id="userInput"
+								type="text"
+								placeholder="shorten a link here..."
+								maxlength="27"
+								required
+							/>
+							<button id="enter">shorten it!</button>
+						</div>
+
+						<span id='errmessage'  style="color: hsl(0, 87%, 67%)" hidden>Please add a link</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Empty List -->
+			<div class="">
+				<div class="listItems col-12">
+					<ul
+						id="list_url"
+						class="col-12 offset-0 col-sm-8 offset-sm-2 link-urls"
+					></ul>
+				</div>
+			</div>
+
+			<!-- advanced statistics section  -->
+			<section class="mt-5">
+				<div
+					class="container mt-2 p-4 d-flex flex-column align-items-center"
+				>
+					<h2 class="mb-5 font-weight-bold">Advanced Statistics</h2>
+					<p class="card-subtitle">
+						This is a company that builds websites, web apps and
+						<br />
+						e-commerce solutions. e-commerce solutions.
+					</p>
+					<div class="row align-items-center justify-content-center">
+						<div class="col-md-3 col-sm-6 item card mb-md-5">
+							<div class="card-icon">
+								<img
+									src="images/icon-brand-recognition.svg"
+									alt="Photo of sunset"
+								/>
+							</div>
+							<h5
+								class="item-card-title mt-3 mb-3 font-weight-bold"
+							>
+								Brand Recognition
+							</h5>
+							<p class="card-text">
+								This is a company that builds websites, web apps
+								and e-commerce solutions.
+							</p>
+						</div>
+						<div class="item-line"></div>
+						<div
+							class="col-md-3 col-sm-6 item card mt-md-2 mb-md-3"
+						>
+							<h4 class="card-icon">
+								<img
+									src="images/icon-detailed-records.svg"
+									alt="Photo of sunset"
+								/>
+							</h4>
+							<h5
+								class="item-card-title mt-3 mb-3 font-weight-bold"
+							>
+								Detailed Records
+							</h5>
+							<p class="card-text">
+								This is a company that builds websites, web apps
+								and e-commerce solutions.
+							</p>
+						</div>
+						<div class="item-line"></div>
+						<div class="col-md-3 col-sm-6 item card mt-md-5">
+							<h4 class="card-icon">
+								<img
+									src="images/icon-fully-customizable.svg"
+									alt="Photo of sunset"
+								/>
+							</h4>
+							<h5
+								class="item-card-title mt-3 mb-3 font-weight-bold"
+							>
+								Fully Customizable
+							</h5>
+							<p class="card-text">
+								This is a company that builds websites, web apps
+								and e-commerce solutions.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="promotion">
+				<h5 class="card-title">Boost your links today</h5>
+				<a
+					href="#"
+					class="banner-section-btn btn banner-section-btn"
+					class="btn btn-primary"
+				>
+					Get Started
+				</a>
+			</section>
+		</section>
+
+		<!-- Footer -->
+		<footer>
+			<div class="container-fluid bg-dark p-5">
+				<div class="row"></div>
+				<div class="row">
+					<div class="col-auto-md col-lg text-center">
+						<img src="images/logo.svg" class ='svglogo'style="">
+					</div>
+
+					<div class="col-md">
+						<div class="row justify-content-center text-white">
+							<div class="col-md">
+								<h4 class="mb-3 fw-bold">Features</h4>
+								<div class="text-muted">Link Shortening</div>
+								<div class="text-muted">Branded Links</div>
+								<div class="text-muted">Analytics</div>
+							</div>
+							<div class="col-md">
+								<h4 class="mb-3 fw-bold">Resources</h4>
+								<div class="text-muted">Blog</div>
+								<div class="text-muted">Developers</div>
+								<div class="text-muted">Support</div>
+							</div>
+							<div class="col-md">
+								<h4 class="mb-3 fw-bold">Company</h4>
+								<div class="text-muted">About</div>
+								<div class="text-muted">Our Team</div>
+								<div class="text-muted">Careers</div>
+								<div class="text-muted">Contact</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-auto-md text-center mt-4 mt-md-0 col-lg fw-bold text-white">
+						<a href="" class="me-4 text-reset mr-3">
+							<i class="fab fa-facebook-f"></i>
+						</a>
+						<a href="" class="me-4 text-reset mr-3">
+							<i class="fab fa-twitter"></i>
+						</a>
+						<a href="" class="me-4 text-reset mr-3">
+							<i class="fab fa-google"></i>
+						</a>
+						<a href="" class="me-4 text-reset mr-3">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</div>
+				</div>
+				<!-- Section: Social media -->
+			</div>
+		</footer>
+		<!-- Footer -->
+		<!-- Section: Links  -->
+		<div class="attribution">
+			Challenge by
+			<a href="https://svs.edu.eg" target="_blank">HEllo</a>
+			. Coded by
+			<a href="#">Miyar Ayman</a>
+			.
+		</div>
+
+		<script src="js/all.min.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/popper.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/custom.js"></script>
+	</body>
+</html>
