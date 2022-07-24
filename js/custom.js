@@ -2,7 +2,7 @@ var enterButton = document.getElementById("enter");
 var input = document.getElementById("userInput");
 var ul = document.querySelector("#list_url");
 var item = document.getElementsByTagName("li");
-var errmessage=document.getElementById('errmessage')
+var errmessage=document.getElementById('errmessage');
 let urldefault='https://reLink/'
 function makeid(length) {
     var result           = '';
@@ -16,9 +16,12 @@ function makeid(length) {
 }
 
 console.log(makeid(5));
+
+//check input length
 function inputLength(){
 	return input.value.length;
 } 
+
 
 function listLength(){
 	return item.length;
@@ -36,16 +39,19 @@ function createListElement() {
 
 	ul.appendChild(li); //adds li to ul
     console.log(ul)
+    let shorten=makeid(5);
+    let inputValue=urldefault+shorten
 	input.value = ""; //Reset text input field
 
 
 	//START STRIKETHROUGH
 	// because it's in the function, it only adds it for new items
-	function crossOut() {
+	function crossOut(e) {
+        console.log(e?.target?.value)
 		li.classList.toggle("done");
 	}
 
-	li.addEventListener("click",crossOut);
+	li.addEventListener("click",(e)=>{crossOut(e)});
 	//END STRIKETHROUGH
 
 
@@ -53,29 +59,30 @@ function createListElement() {
     var dURL=document.createElement('spam')
         dURL.className='unrealurl'
 
-    dURL.appendChild(document.createTextNode(urldefault+makeid(5)))
+    dURL.appendChild(document.createTextNode(inputValue))
+    console.log(dURL,"dURL")
 	var dBtn = document.createElement("button");
 	dBtn.appendChild(document.createTextNode("copy"));
         dBtn.className='copybtn'
-		dBtn.id='copybtnid'
-
+		dBtn.id=inputValue
+        dBtn.value=inputValue
 	li.appendChild(dURL);	li.appendChild(dBtn);
-	dBtn.addEventListener("click", copyListItem);
+	dBtn.addEventListener("click", (e)=>{copyListItem(e)});
 	// END ADD DELETE BUTTON
 
 
 	//ADD CLASS DELETE (DISPLAY: NONE)
-	function copyListItem(){
-//		li.classList.add("delete")
-        navigator.clipboard.writeText('sasasasa')
-		document.getElementById("copybtnid").textContent="copied";
+	function copyListItem(e){
+//		li.classList.add("delete")s
+        navigator.clipboard.writeText(e.target.value)
+		document.getElementById(e.target.value).textContent="copied";
 	}
 	//END ADD CLASS DELETE
 }
 
 
 function addListAfterClick(){
-	if (inputLength() > 0) { //makes sure that an empty input field doesn't create a li
+	if (inputLength() > 0) { 
 		createListElement();
 	}
     else {errmessage.hidden=0; errmessage.placeholder.style.color="red";}
@@ -94,6 +101,8 @@ enterButton.addEventListener("click",addListAfterClick);
 input.addEventListener("keypress", addListAfterKeypress);
 
 window.addEventListener("resize", displayWindowSize);
+
+
 // function displayWindowSize(){
 // if ($(window).width() < 500) {
 // 	document.getElementsByClassName('d-flex')[1].classList.remove("align-items-start");
